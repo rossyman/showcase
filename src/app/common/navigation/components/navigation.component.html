@@ -1,0 +1,23 @@
+<a [routerLink]="['/']">
+  <h1>eMed</h1>
+  <img class="logo" src="assets/emed-icon.svg" alt="eMed" />
+</a>
+
+<nav>
+  <ul>
+    <li *ngFor="let link of LINKS">
+      <a [routerLink]="link.location" [routerLinkActive]="'active'" [title]="link.name">
+        {{ link.name }}
+      </a>
+    </li>
+  </ul>
+
+  <div class="divider"></div>
+
+  <div class="user-details" *ngIf="user">
+    <a [routerLink]="'/account'">
+      <img class="user-image" [src]="user.image" alt="{{ user.firstName }}" />
+      <p class="user-name">{{ user.firstName }}</p>
+    </a>
+  </div>
+</nav>

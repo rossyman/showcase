@@ -1,0 +1,157 @@
+@media (min-width: 1250px) {
+  :host {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(4, .5fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 1251px) {
+  .box {
+    margin-bottom: 1.5rem;
+  }
+}
+
+h2 {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+  opacity: .8;
+}
+
+.hero-box {
+  grid-column: span 6;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background: rgb(187,173,255);
+  background: linear-gradient(0deg, rgba(187,173,255,1) 0%, rgba(218,182,252,1) 100%);
+
+  color: #fff;
+
+  & h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0;
+    opacity: 1;
+  }
+
+  & p {
+    padding-bottom: 1rem;
+  }
+
+  & a {
+    align-self: flex-start;
+  }
+}
+
+.user-box {
+
+  grid-column: span 2;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  & .user-type {
+    opacity: .5;
+  }
+
+  & img {
+    margin-bottom: 1rem;
+    max-width: 70px;
+    border-radius: 100%;
+  }
+
+  & h2 {
+    margin: 0;
+    padding: 0;
+  }
+
+  & p {
+    margin: 0;
+  }
+
+  & a {
+    display: block;
+    margin-top: 1rem;
+    color: var(--text-active);
+    text-decoration: none;
+  }
+}
+
+.metric {
+
+  grid-column: span 2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  & p {
+    font-size: 2.5rem;
+    margin: .5rem 0;
+
+    &.delta {
+      font-size: 1rem;
+    }
+  }
+}
+
+.blood-count {
+
+  &-box {
+    grid-column: span 4;
+    grid-row: span 2;
+  }
+
+  &-chart {
+    margin-top: 2rem;
+    height: 300px;
+    width: 100%;
+  }
+}
+
+.appointment-box {
+  grid-column: span 4;
+  grid-row: span 2;
+
+  & ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    & li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(0,0,0,.15);
+    }
+  }
+}
+
+.appointment-time {
+  text-align: right;
+
+  & p {
+    margin: 0;
+  }
+}
+
+.appointment-details {
+
+  & p, h3 {
+    margin: 0;
+  }
+
+  & h3 {
+    font-weight: 500;
+  }
+}

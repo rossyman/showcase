@@ -1,0 +1,56 @@
+<ng-container *ngIf="user">
+
+<div class="box hero-box">
+
+  <h2>Welcome back, <b>{{ user.firstName }}</b>!</h2>
+
+  <p>Is there something concerning you about your health? Let us take care of the process. <b>As always</b>, if you need urgent care, contact your local emergency department.</p>
+
+  <a class="btn" [routerLink]="['/bookings']">Book an appointment</a>
+
+</div>
+
+<div class="box user-box">
+
+  <img src="{{ user.image }}" alt="{{ user.firstName + ' ' + user.lastName }}">
+
+  <h2>{{ user.firstName + ' ' + user.lastName }}</h2>
+  <p class="user-type">{{ user.type }}</p>
+
+  <p><small><a [routerLink]="['/account']">View Profile</a></small></p>
+
+</div>
+
+<div class="box metric" *ngFor="let insight of keyPatientInsights">
+  <h2>{{ insight.insightType }}</h2>
+  <p>{{ insight.insightValue }}</p>
+  <p class="delta" *ngIf="insight.delta"><small><emed-delta [delta]="insight.delta.percentChange"></emed-delta></small></p>
+</div>
+
+<div class="box blood-count-box">
+
+  <h2>Blood Count <small> - Between May 2021 and Nov 2021</small></h2>
+
+  <div class="blood-count-chart" echarts [options]="patientBloodCountInsightOverTimeGraph"></div>
+</div>
+
+<div class="box appointment-box">
+
+  <h2>Appointments</h2>
+
+  <ul *ngFor="let appointment of patientAppointments">
+    <li>
+      <div class="appointment-details">
+        <h3>{{ appointment.name }}</h3>
+        <p><small>{{ appointment.location }}</small></p>
+      </div>
+      <div class="appointment-time">
+        <p>{{ appointment.dateTime | date: 'MMM d ~ HH:mm' }}</p>
+        <p><small>{{ appointment.attending }}</small></p>
+      </div>
+    </li>
+  </ul>
+
+</div>
+
+</ng-container>

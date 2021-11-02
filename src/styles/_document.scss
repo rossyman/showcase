@@ -1,0 +1,33 @@
+/**
+ * Document related styles
+ */
+
+html {
+  font-family: -apple-system,
+               BlinkMacSystemFont,
+               avenir next,
+               avenir,
+               segoe ui,
+               helvetica neue,
+               helvetica,
+               Ubuntu,
+               roboto,
+               noto,
+               arial,
+               sans-serif;
+
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.btn,
+button {
+  background-color: var(--text-active);
+  border: none;
+  color: var(--bg);
+  text-decoration: none;
+  padding: .5rem 1rem;
+  margin: 0;
+  border-radius: .3rem;
+}
