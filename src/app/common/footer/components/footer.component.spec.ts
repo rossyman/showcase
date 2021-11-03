@@ -8,7 +8,7 @@ describe('FooterComponent', () => {
   const testYear = '2021';
 
   const mockTheDateService = (): SpyObj<DateService> =>
-    createSpyObj('DateService', ['year']);
+    createSpyObj('DateService', ['getYear']);
 
   let mockDateService: SpyObj<DateService>;
 

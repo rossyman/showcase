@@ -1,5 +1,6 @@
 import { PrincipalUserService } from './principal-user.service';
 import { mockUser } from '../../mocks/mock-user';
+import { waitForAsync } from '@angular/core/testing';
 
 describe('PrincipalUserService', () => {
 
@@ -19,7 +20,7 @@ describe('PrincipalUserService', () => {
 
     it('should retrieve the last user on the subject', (done: DoneFn) =>
       principalUserService.getPrincipalUser$().subscribe(principal => {
-        expect(principal).toBe(mockUser());
+        expect(principal).toEqual(mockUser());
         done();
       }));
 
@@ -27,13 +28,13 @@ describe('PrincipalUserService', () => {
 
   describe('setPrincipalUser', () => {
 
-    beforeEach(() => {
-      principalUserService.setPrincipalUser(null);
-    });
+    beforeEach(waitForAsync(() => {
+      principalUserService.setPrincipalUser(mockUser());
+    }));
 
     it('should set the state of the principal user on the subject', (done: DoneFn) =>
       principalUserService.getPrincipalUser$().subscribe(principal => {
-        expect(principal).toBeNull();
+        expect(principal).toEqual(mockUser());
         done();
       }));
 

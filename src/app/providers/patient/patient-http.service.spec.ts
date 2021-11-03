@@ -11,6 +11,7 @@ import { PatientInsightType } from '../../interfaces/patient-insight-type';
 import { waitForAsync } from '@angular/core/testing';
 import SpyObj = jasmine.SpyObj;
 import createSpyObj = jasmine.createSpyObj;
+import { reverseStringEnum } from '../../common/util/enums';
 
 describe('PatientHttpService', () => {
 
@@ -40,7 +41,7 @@ describe('PatientHttpService', () => {
       .returnValue(of(testPatientInsightsDto));
 
     mockHttpClient.get
-      .withArgs(`/api/patient/${testPatientId}/insight/${testPatientInsightType}`).and
+      .withArgs(`/api/patient/${testPatientId}/insight/${reverseStringEnum(PatientInsightType, testPatientInsightType)}`).and
       .returnValue(of(testPatientInsightOverTimeDto));
 
     patientHttpService = new PatientHttpService(mockHttpClient);
