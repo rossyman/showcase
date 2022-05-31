@@ -2,6 +2,11 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
+  "defaultProject": "emed",
+  "cli": {
+    "packageManager": "pnpm",
+    "defaultCollection": "@angular-eslint/schematics"
+  },
   "projects": {
     "emed": {
       "projectType": "application",
@@ -120,9 +125,5 @@
         }
       }
     }
-  },
-  "defaultProject": "emed",
-  "cli": {
-    "defaultCollection": "@angular-eslint/schematics"
   }
 }
